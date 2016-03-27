@@ -2,16 +2,16 @@
 fileVersion=1
 
 # font settings
-fontName=Meteocons
-fontFile=
+fontName=NovaMono
+fontFile=../Fonts/NovaMono.ttf
 charSet=0
-fontSize=-24
+fontSize=-26
 aa=1
 scaleH=100
 useSmoothing=1
 isBold=0
 isItalic=0
-useUnicode=1
+useUnicode=0
 disableBoxChars=1
 outputInvalidCharGlyph=0
 dontIncludeKerningPairs=0
@@ -24,14 +24,14 @@ paddingDown=2
 paddingUp=2
 paddingRight=0
 paddingLeft=0
-spacingHoriz=0
+spacingHoriz=1
 spacingVert=0
 useFixedHeight=1
 forceZero=1
 
 # output file
-outWidth=384
-outHeight=192
+outWidth=256
+outHeight=240
 outBitDepth=32
 fontDescFormat=1
 fourChnlPacked=0
@@ -50,6 +50,6 @@ invB=0
 outlineThickness=0
 
 # selected chars
-chars=33-43,48-57,65-90
+chars=32-126
 
 # imported icon images

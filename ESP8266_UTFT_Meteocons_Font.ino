@@ -38,7 +38,6 @@ See more at http://usemodj.com
 #include <UTFT.h>
 #include <SPI.h>
 #include <XPT2046.h>
-//#include "Meteocons_32.h"
 
 #define ESP_SPI_FREQ 4000000
 
@@ -53,10 +52,22 @@ XPT2046 myTouch(/*cs=*/ 4, /*irq=*/ 5);
 
 // Declare which fonts we will be using
 extern uint8_t BigFont[];
-extern uint8_t Meteocons_32[];
+extern uint8_t Meteocons_33[];
 extern uint8_t Meteocons_24[];
+extern uint8_t UmeGothic_24[];
+extern uint8_t Nk57Monospace_24[];
+extern uint8_t Unispace_24[];
+extern uint8_t Unispace_32[];
+extern uint8_t SourceCodePro_32[];
+extern uint8_t SourceCodePro_23[];
+extern uint8_t SourceCodePro_11[];
+extern uint8_t NovaMono_26[];
+extern uint8_t BitstreamVeraSans_15[];
+extern uint8_t BitstreamVeraSans_23[];
+extern uint8_t Monaco_32[];
+extern uint8_t Monaco_12[];
 
-uint8_t *pMeteoconsFont = Meteocons_32;
+uint8_t *pFont = Meteocons_33;
 char stCurrent[20]="";
 int stCurrentLen=0;
 char stLast[20]="";
@@ -112,7 +123,7 @@ void updateStr(int val)
 {
   if (stCurrentLen<20)
   {
-    myGLCD.setFont(pMeteoconsFont);
+    myGLCD.setFont(pFont);
     stCurrent[stCurrentLen]=val;
     stCurrent[stCurrentLen+1]='\0';
     stCurrentLen++;
@@ -170,7 +181,7 @@ void setup()
 
   //myGLCD.setFont(BigFont); 
   //myGLCD.setFont(Meteocons_32); 
-  myGLCD.setFont(pMeteoconsFont); 
+  myGLCD.setFont(pFont); 
   myGLCD.setBackColor(0, 0, 255);
   drawButtons();
 }
@@ -256,7 +267,7 @@ void loop()
         waitForIt(160, 130, 300, 180);
         if (stCurrentLen>0)
         {
-          myGLCD.setFont(pMeteoconsFont);
+          myGLCD.setFont(pFont);
           for (x=0; x<stCurrentLen+1; x++)
           {
             stLast[x]=stCurrent[x];
